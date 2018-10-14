@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
+    <title>Distritos</title>
+    <!-- Bootstrap core CSS -->
+    <link href='{% static "module2/css/bootstrap.css" %}' rel="stylesheet">
+    <link href='{% static "module2/css/sweetalert2.min.css" %}' rel="stylesheet">
+    <script src='{% static "module2/js/jquery-3.3.1.min.js" %}'></script>
+    <script src='{% static "module2/js/sweetalert2.min.js" %}'></script>
+    <script src='{% static "module2/js/iniciar.js" %}'></script>
+    <script src='{% static "module2/js/distritos.js" %}'></script>
+    <link rel="stylesheet" type="text/css" href='{% static "module2/css/index_votando.css" %}'>
+    <link href='{% static "main/css/main_css.css" %}' rel="stylesheet">
+    <link href='{% static "module2/css/distritos.css" %}' rel="stylesheet">
+    <link href='{% static "module2/css/index.css" %}' rel="stylesheet">
+    <script src='{% static "main/js/iniciar.js" %}'></script>
+</head>
+<script>
+    function load(){
+        window.history.pushState({}, document.title, "/" + "module2");
+    }
+</script>
+<body class="text-center" onLoad="disable();load()">
+<div class="container vertical-center">
+    <div class="row align-items-center">
+        <div class="col">
+            <h2 id="default" style="margin-top:-10%;">Seleccione el distrito/pueblo y pulse <br> el botón 'Aceptar' para
+                comenzar el proceso de selección de proyectos.</h2>
+
+            <h3>Distritos</h3>
+
+            <div class="row">
+
+                <div class="form-check col-sm-3">
+                    <input type="radio" class="form-check-input" id="13" name="selec" checked>
+                    <label class="form-check-label" for="13" >
+                        ALGIRÓS
+                    </label>
+                </div>
+                
+                <div class="form-check col-sm-3">
+                    <input type="radio" class="form-check-input" id="16" name="selec">
+                    <label class="form-check-label" for="16">
+                        BENICALAP
+                    </label>
+                </div>
+                
+                <div class="form-check col-sm-3">
+                    <input type="radio" class="form-check-input" id="14" name="selec">
+                    <label class="form-check-label" for="14">
+                        BENIMACLET
+                    </label>
+                </div>
+                
+                <div class="form-check col-sm-3">
+                    <input type="radio" class="form-check-input" id="12" name="selec">
+                    <label class="form-check-label" for="12">
+                        CAMINS AL GRAU
+                    </label>
+                </div>            
+            </div>
+
+            <div class="row">
+
+                <div class="form-check col-sm-3">
+                    <input type="radio" class="form-check-input" id="4" name="selec">
+                    <label class="form-check-label" for="4">
+                        CAMPANAR
+                    </label>
+                </div>
+
+                <div class="form-check col-sm-3">
+                    <input type="radio" class="form-check-input" id="1" name="selec">
+                    <label class="form-check-label" for="1">
+                        CIUTAT VELLA
+                    </label>
+                </div>
+
+                <div class="form-check col-sm-3">
+                    <input type="radio" class="form-check-input" id="6" name="selec">
+                    <label class="form-check-label" for="6">
+                        EL PLA DEL REAL
+                    </label>
+                </div>
+
+                <div class="form-check col-sm-3">
+                    <input type="radio" class="form-check-input" id="3" name="selec">
+                    <label class="form-check-label" for="3">
+                        EXTRAMURS
+                    </label>
+                </div>
+                
+            </div>
+
+            <div class="row">
+
+                <div class="form-check col-sm-3">
+                    <input type="radio" class="form-check-input" id="9" name="selec">
+                    <label class="form-check-label" for="9">
+                        JESUS
+                    </label>
+                </div>
+
+                <div class="form-check col-sm-3">
+                    <input type="radio" class="form-check-input" id="2" name="selec">
+                    <label class="form-check-label" for="2">
+                        L'EIXAMPLE
+                    </label>
+                </div>
+
+                <div class="form-check col-sm-3">
+                    <input type="radio" class="form-check-input" id="7" name="selec">
+                    <label class="form-check-label" for="7">
+                        L'OLIVERETA
+                    </label>
+                </div>
+
+                <div class="form-check col-sm-3">
+                    <input type="radio" class="form-check-input" id="5" name="selec">
+                    <label class="form-check-label" for="5">
+                        LA SAÏDIA
+                    </label>
+                </div>
+
+                
+            </div>
+            
+            <div class="row">
+
+                <div class="form-check col-sm-3">
+                    <input type="radio" class="form-check-input" id="8" name="selec">
+                    <label class="form-check-label" for="8">
+                        PATRAIX
+                    </label>
+                </div>
+
+                <div class="form-check col-sm-3">
+                    <input type="radio" class="form-check-input" id="11" name="selec">
+                    <label class="form-check-label" for="11">
+                        POBLATS MARÍTIMS
+                    </label>
+                </div>
+
+                <div class="form-check col-sm-3">
+                    <input type="radio" class="form-check-input" id="10" name="selec">
+                    <label class="form-check-label" for="10">
+                        QUATRE CARRERES
+                    </label>
+                </div>
+
+                <div class="form-check col-sm-3">
+                    <input type="radio" class="form-check-input" id="15" name="selec">
+                    <label class="form-check-label" for="15">
+                        RASCANYA
+                    </label>
+                </div>
+                
+            </div>
+
+
+            <h3>Pueblos</h3>
+            <div class="row">
+                <div class="form-check col-sm-3">
+                    <input type="radio" class="form-check-input" id="27" name="selec">
+                    <label class="form-check-label" for="27">
+                        BENIFARAIG
+                    </label>
+                </div>
+
+                <div class="form-check col-sm-3">
+                    <input type="radio" class="form-check-input" id="35" name="selec">
+                    <label class="form-check-label" for="35">
+                        BENIFERRI
+                    </label>
+                </div>
+
+                <div class="form-check col-sm-3">
+                    <input type="radio" class="form-check-input" id="34" name="selec">
+                    <label class="form-check-label" for="34">
+                        BENIMÀMET
+                    </label>
+                </div>
+
+                <div class="form-check col-sm-3">
+                    <input type="radio" class="form-check-input" id="33" name="selec">
+                    <label class="form-check-label" for="33">
+                        BORBOTÓ
+                    </label>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="form-check col-sm-3">
+                    <input type="radio" class="form-check-input" id="29" name="selec">
+                    <label class="form-check-label" for="29">
+                        CARPESA
+                    </label>
+                </div>
+
+                <div class="form-check col-sm-3">
+                    <input type="radio" class="form-check-input" id="30" name="selec">
+                    <label class="form-check-label" for="30">
+                        CASES DE BÀRCENA
+                    </label>
+                </div>
+
+                <div class="form-check col-sm-3">
+                    <input type="radio" class="form-check-input" id="36" name="selec">
+                    <label class="form-check-label" for="36">
+                        EL CASTELLAR-L'OLIVERAL
+                    </label>
+                </div>
+
+                <div class="form-check col-sm-3">
+                    <input type="radio" class="form-check-input" id="43" name="selec">
+                    <label class="form-check-label" for="43">
+                        EL FORN D'ALCEDO
+                    </label>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="form-check col-sm-3">
+                    <input type="radio" class="form-check-input" id="39" name="selec">
+                    <label class="form-check-label" for="39">
+                        EL PALMAR
+                    </label>
+                </div>
+
+                <div class="form-check col-sm-3">
+                    <input type="radio" class="form-check-input" id="38" name="selec">
+                    <label class="form-check-label" for="38">
+                        EL SALER
+                    </label>
+                </div>
+
+                <div class="form-check col-sm-3">
+                    <input type="radio" class="form-check-input" id="42" name="selec">
+                    <label class="form-check-label" for="42">
+                        FAITANAR
+                    </label>
+                </div>
+
+                <div class="form-check col-sm-3">
+                    <input type="radio" class="form-check-input" id="41" name="selec">
+                    <label class="form-check-label" for="41">
+                        LA TORRE
+                    </label>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="form-check col-sm-3">
+                    <input type="radio" class="form-check-input" id="32" name="selec">
+                    <label class="form-check-label" for="32">
+                        MASSARROJOS
+                    </label>
+                </div>
+
+                <div class="form-check col-sm-3">
+                    <input type="radio" class="form-check-input" id="31" name="selec">
+                    <label class="form-check-label" for="31">
+                        MAUELLA
+                    </label>
+                </div>
+
+                <div class="form-check col-sm-3">
+                    <input type="radio" class="form-check-input" id="40" name="selec">
+                    <label class="form-check-label" for="40">
+                        PERELLONET
+                    </label>
+                </div>
+
+                <div class="form-check col-sm-3">
+                    <input type="radio" class="form-check-input" id="37" name="selec">
+                    <label class="form-check-label" for="37">
+                        PINEDO
+                    </label>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="form-check col-sm-3">
+                    <input type="radio" class="form-check-input" id="28" name="selec">
+                    <label class="form-check-label" for="28">
+                        POBLE NOU
+                    </label>
+                </div>
+            
+            </div>
+
+        </div>
+    </div>
+    <div class="row boton">
+        <div class="col ">
+            <a href="{% url 'module2:index' %}"><button id="iniciar" type="button" class="btn btn-primary btn-lg button-no"> Cancelar </button></a>
+            <button id="iniciar" type="button" class="btn btn-primary btn-lg" onclick="imprimiendo();send()"> Aceptar</button>
+        </div>
+    </div>
+</div>
+<a style="display:none" href="" id="padjango"></a>
+</body>
+</html>

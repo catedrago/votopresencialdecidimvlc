@@ -1,0 +1,64 @@
+<!doctype html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Signin Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href='{% static "module3/css/bootstrap.css" %}' rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href='{% static "module3/css/manual.css" %}' rel="stylesheet">
+    <link href='{% static "module3/css/index.css" %}' rel="stylesheet">
+
+    <!--Keyboard-->
+    <script src='{% static "module3/js/jquery-3.3.1.min.js" %}'></script>
+
+
+    <script src='{% static "module3/js/jquery.keyboard.js" %}'></script>
+    <script src='{% static "module3/js/jquery.keyboard.extension-all.js" %}'></script>
+    <script src='{% static "module3/js/jquery-ui.min.js" %}'></script>
+    <link href='{% static "module3/css/keyboard-previewkeyset.css" %}' rel="stylesheet">
+    <link href='{% static "module3/css/keyboard.css" %}' rel="stylesheet">
+    <link href='{% static "module3/css/jquery-ui.css" %}' rel="stylesheet">
+
+    <script src='{% static "module3/js/manual.js" %}'></script>
+    <script src='{% static "module3/js/es.js" %}'></script>
+    <link href='{% static "main/css/main_css.css" %}' rel="stylesheet">
+
+</head>
+
+<body class="text-center" onload=teclado()>
+<div class="container">
+    <div class="row align-items-center">
+        <div class="col">
+            <h3 id="default">Introduzca los siguientes datos utilizando el teclado mostrado en pantalla:</h3>
+
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-sm">
+            <div class="campos"> DNI:</div>
+            <textarea id="keyboardDNI" style="width:10em;" placeholder="Introduzca su DNI"></textarea>
+        </div>
+    </div>
+    <hr class="half-rule"/>
+    <div class="row align-items-center">
+        <div class="col">
+
+
+            <a href="{% url 'module3:index'  %}"><button id="iniciar" type="button" class="btn btn-primary btn-lg button-no"> Cancelar </button></a>
+            <button type="button" class="btn btn-primary btn-lg" id="aceptar" onclick=send()> Aceptar</button>
+
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
+<a id="manual_url" href="{% url 'module3:reconocimiento_manual' 'aa' %}" id="padjango"></a>

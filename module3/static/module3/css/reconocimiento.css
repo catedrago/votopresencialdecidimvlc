@@ -1,0 +1,25 @@
+{% load staticfiles %}
+
+.btn{
+    width: 10%;
+    margin: 1%;
+}
+
+.si{
+    background-color: orange;
+
+}
+
+.no {
+    background-color: whitesmoke;
+    color: black;
+}
+
+.container{
+    margin-top: 20%;
+}
+
+.btn-primary:hover{
+    background-color: #D6702B;
+    border-color: #D6702B;
+}

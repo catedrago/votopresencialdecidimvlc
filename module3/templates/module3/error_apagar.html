@@ -1,0 +1,39 @@
+<!doctype html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
+
+    <title>Signin Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href='{% static "main/css/bootstrap.css" %}' rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href='{% static "main/css/index.css" %}' rel="stylesheet">
+    <link href='{% static "main/css/main_css.css" %}' rel="stylesheet">
+</head>
+
+<body class="text-center">
+<div class="container">
+    <div class="row align-items-center">
+        <div class="col">
+            <h1 id="default">Proceso de cierre de la votación.</h1>
+            <br>
+            <h2 id="default">Paso 2: Cierre </h2>
+            <h2>Fallo al cerrar el sistema</h2>
+            <h3 id="default">Compruebe el dispositivo USB</h3>
+        </div>
+    </div>
+    <div class="row align-items-center">
+        <div class="col">
+
+            <a href="{% url 'module3:borrar'  %}"><button id="cancelar" type="button" class="btn btn-primary btn-lg button-no"> Aceptar </button></a>
+        </div>
+    </div>
+</div>
+</body>
+<script src='{% static "main/js/jquery-3.3.1.min.js" %}'></script>
+<script src='{% static "main/js/main.js" %}'></script>
+</html>

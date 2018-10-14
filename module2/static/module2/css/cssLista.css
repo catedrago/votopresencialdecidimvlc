@@ -1,0 +1,181 @@
+body{
+    /*height: 80%;*/
+    /*overflow: no-display;*/
+}
+
+/*Boton anyadir propuesta*/
+.aceptar{
+    margin-top: 47%;
+    position: absolute;
+    width: 27%;
+    height: 8%;
+    float: left;
+    /*border-style: dotted;*/
+    padding: 0 5%;
+
+
+}
+
+.aceptarButton, .enviar {
+    width: 100%;
+    height: 100%;
+}
+.aceptarButton{
+
+    font-weight: 500;
+    font-size: medium;
+    float: left;
+    margin: 0 13% 0 13%;
+
+}
+
+.enviar {
+    margin: 0% 0% 0% 420%;
+    font-size: 1.3em;
+    background-color: #D6702B;
+
+
+}
+
+.tituloPropuestaDiv{
+    width: 91%;
+    height: 100%;
+}
+
+.propuesta{
+    width: 100%;
+    border-bottom-width: 1px;
+    border-bottom-color: grey;
+    border-bottom-style: solid;
+}
+
+.propuestaDiv{
+    overflow: scroll;
+
+}
+
+.buttonPropuesta{
+    width: 15%;
+    height: 40px;
+    float:right    ;
+    margin-top: -1.5%;
+    margin-right: 0%;
+}
+
+.buttonAceptar {
+    border-radius: 0.5em;
+	/*border-radius: 4px;*/
+    color:white;
+    background: #D6702B;
+    height: 40px;
+    width: 40%;
+    font-family: Rambla;
+    font-weight: bold;
+}
+
+.tituloPropuestaInfo{
+    color: #c1620b; /* naranja */
+    overflow: auto;
+    font-size: 26px;
+    font-family: Oxygen;
+
+    font-weight: bold;
+}
+
+.swal_scroll{
+    box-sizing : border-box;
+    max-height : 100% !important;
+    overflow-y : auto !important;
+    padding : 0 17px 17px !important;
+    height : 200px;
+    text-align: left;
+
+}
+.swal_scroll p{
+    margin-bottom: 6px;
+}
+
+.swal_scroll strong{
+    text-decoration: underline;
+}
+
+.negro2 {
+    /*display: none;*/
+    margin-top: -10%;
+    position: absolute;
+    z-index:  2 ;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.1); /* Black w/ opacity */
+}
+
+.negro2 h1{
+    font-size: 60px;
+    margin: 20% 30% 55% 35%;
+}
+
+.buttonInfo{
+    background-color: #98bf11;
+    border: none;
+    color: white;
+    padding: 7px 7px;
+    margin: -1% 0 0 10%;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    font-size: 16px;
+    width: 40%;
+    position: relative;
+    border-radius: 0.5em;
+}
+
+.precioPropuesta{
+    /*margin-right: 4%;*/
+    /*margin-bottom: 50%;*/
+    /*font-size: 20px;*/
+
+    color: black; /* naranja */
+    font-weight: bold;
+    font-size: 2vw;
+    width: 150px;
+    float: left;
+    position: relative;
+}
+
+.title{
+    width: 80%
+}
+
+#cancelarVotacion{
+    height: 40px;
+    width: 20%;
+    /*position: relative;*/
+    float: right;
+    font-size: 1.2em;
+    margin: -4.5% 0 0 0;
+
+}
+
+.swal2-show{
+    height: auto;
+}
+
+.swal_scroll{
+    min-height: 500px;
+    font-size: 28px;
+}
+
+.swal2-modal{
+    /*height: auto;*/
+    max-height: 800px;
+}
+
+/*.swal2-content{*/
+    /*font-size: 28px;*/
+/*}*/
+
+.btn-primary{
+    background-color: #D6702B;
+    border-color: #D6702B;
+}

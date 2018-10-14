@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta user-scalable=no">
+    <title>Votos</title>
+
+    <link rel="stylesheet" type="text/css" href='{% static "module2/css/sweetalert2.min.css" %}'>
+    <link rel="stylesheet" type="text/css" href='{% static "module2/css/css.css" %}'>
+    <link rel="stylesheet" type="text/css" href='{% static "module2/css/model.css" %}'>
+    <link rel="stylesheet" type="text/css" href='{% static "module2/css/cssLista.css" %}'>
+    <script src='{% static "module2/js/d3.v4.min.js" %}'></script>
+    <script src='{% static "module2/js/jquery-3.3.1.min.js" %}'></script>
+    <script src='{% static "module2/js/modal.js" %}'></script>
+    <script src='{% static "module2/js/jsLista.js" %}'></script>
+    <script src='{% static "module2/js/sweetalert2.min.js" %}'></script>
+    <link href='{% static "main/css/main_css.css" %}' rel="stylesheet">
+
+</head>
+<script>
+    var presupuestoRestante = {{ presupuesto }}
+    var distrito = {{ distrito }}
+    var propuestas = []
+
+    function load() {
+        window.history.pushState({}, document.title, "/" + "module2");
+        //spending_proposal_id,title,created_at,cost,description,proposal_report,voted_at,dni_usuarix
+        // d3.csv("bd_propuestas.csv", function (error, data) {
+        d3.csv('{% static "module2/bd_propuestas.csv" %}', function (error, data) {
+                if (error) throw error;
+                // format the data
+
+
+                    data.forEach(function (d) {
+                        {#console.log(d);#}
+                        propuestas.push({
+                            "titulo": d.title,
+                            "text": d.description,
+                            "id": parseInt(d.id),
+                            "fecha": "11-11-2017",// d.created_at
+                            "precio": d.price,
+                            "tipo": "Ciudadania",
+                            "lugar": "Toda la ciudad",
+                            "votado": false,
+                            "geozone_id": d.geozone_id
+                        });
+
+                    });
+
+
+            }
+        );
+
+        /**
+         * Shuffles array in place.
+         * @param {Array} a items An array containing the items.
+         */
+        function shuffle(a) {
+            console.log("Shuffle")
+            var j, x, i;
+            for (i = a.length - 1; i > 0; i--) {
+                j = Math.floor(Math.random() * (i + 1));
+                x = a[i];
+                a[i] = a[j];
+                a[j] = x;
+            }
+            return a
+        }
+
+
+        setTimeout(function () {
+            propuestas = shuffle(propuestas)
+            reload()
+
+        }, 2000);
+
+
+    }
+</script>
+<!--<body onLoad="">-->
+<body onLoad="disable(); load();initModal();">
+<!--<body onLoad="init();">-->
+<div id="fondo">{{ votos }}</div>
+<div class="title">
+<h1 class="title">Presupuesto total restante:   <span id="presupuesto"></span></h1>
+    <a id="cancelarVotacionhref" href="{% url 'module2:index' %}"><button id="cancelarVotacion" type="button" class="btn btn-primary btn-lg button-cancelar-votacion" > Cancelar votación </button></a>
+</div>
+<div class="selector">
+
+
+    <div class="w3-content w3-display-container propuestaDiv">
+        <div class="propuesta">
+            <!--<div class="tituloPropuestaDiv"><h2 class="w3-center tituloPropuesta">Titulo </h2></div>-->
+            <!--<div class="lineaProp">-->
+                <!--<span class="w3-center fechaPropuesta ">Fecha  </span>-->
+                <!--<div class="puntoizq">.</div>-->
+                <!--<span class="tipoPropuesta "> Tipo X</span>-->
+                <!--<div class="punto">.</div>-->
+                <!--<span class="lugar">Toda la ciudad</span>-->
+                <!--<div class="punto">.</div>-->
+                <!--<span class="precioPropuesta"></span>-->
+
+                <!--&lt;!&ndash;<div class="codigoPropuesta">Código de la propuesta: <span id="codigoP"></span></div>&ndash;&gt;-->
+
+            <!--</div>-->
+            <!--&lt;!&ndash;<div id="propuesta" class="propuesta"> rgrehrth</div>&ndash;&gt;-->
+            <!--<button class="buttonPropuesta">Votar</button>-->
+        </div>
+
+
+    </div>
+
+
+
+</div>
+
+<div class="line"></div>
+<div class="line2"></div>
+
+
+<div class="aceptar">
+    <button class="enviar" onclick="comprobarVotacion()" id="enviarVotacion" >Emitir votación</button>
+</div>
+    <div class="MisVotos"><h3  style="">Proyectos votados</h3></div>
+
+<div class="lista">
+    <ul>
+        <!--
+        <li>
+          <h3>Headline</h3>
+          <p>Lorem ipsum dolor sit amet...</p>
+            <button class="eliminar">X</button>
+        </li>
+        -->
+
+
+    </ul>
+
+</div>
+<!-- The Modal -->
+
+<div id="myModal" class="modal">
+
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <div class="titleModal">Proyectos votados</div>
+        <div class="nProyectosVotadosDiv">Número de proyecos votados: <span class="nProyectosVotados">2 proyectos</span></div>
+        <div class="importeTotalDiv">Importe total de la inversión: <span class="importeTotal">307.000 </span></div>
+        <div class="line3"></div>
+
+        <div class="textModal">
+            <div class="text">Para modificar su elección pulse este botón:</div>
+            <div class="text recogerText">Para confirmar su elección pulse este botón y recoja su tarjeta:</div>
+            <button class="close" id ="volver">Cancelar</button>
+            <button class="confirm" id="confirmar" onclick="send()">Confirmar votación</button>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="negro"></div>
+
+<a style="display:none" href="" id="padjango"></a>
+<!--href="{% url 'votar' '15,47' %}"-->
+</body>
+</html>
+

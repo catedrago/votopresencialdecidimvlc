@@ -1,0 +1,49 @@
+<!doctype html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
+
+    <title>Signin Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href='{% static "module3/css/bootstrap.css" %}' rel="stylesheet">
+    <link href='{% static "module2/css/sweetalert2.min.css" %}' rel="stylesheet">
+    <script src='{% static "module2/js/jquery-3.3.1.min.js" %}'></script>
+    <script src='{% static "module2/js/sweetalert2.min.js" %}'></script>
+
+    <!-- Custom styles for this template -->
+    <link href='{% static "module3/css/index.css" %}' rel="stylesheet">
+    <link href='{% static "main/css/main_css.css" %}' rel="stylesheet">
+    <script src='{% static "module3/js/index.js" %}'></script>
+</head>
+
+<body class="text-center">
+<div class="container">
+    <div class="row align-items-center">
+        <div class="col">
+            <h1 id="default">Proceso de cierre de la votación.</h1>
+            <br>
+            <h2 id="default">Paso 1: Acta de recuento</h2>
+            <h3 id="default">¿Imprimir ticket de acta de recuento?</h3>
+
+        </div>
+    </div>
+    <hr class="half-rule"/>
+    <div class="row align-items-center">
+        <div class="col">
+            <a href="{% url 'module3:index'  %}"><button id="iniciar" type="button" class="btn btn-primary btn-lg button-no"> Cancelar cierre </button></a>
+            <a href="{% url 'module3:borrar'  %}"><button id="iniciar" type="button" class="btn btn-primary btn-lg "> Omitir </button></a>
+            <a href="{% url 'module3:imprimir'  %}"><button id="iniciar" type="button" class="btn btn-primary btn-lg" onclick="imprimiendo()"> Imprimir </button></a>
+        </div>
+
+    </div>
+
+    <hr class="half-rule"/>
+
+</div>
+</body>
+<script src='{% static "main/js/jquery-3.3.1.min.js" %}'></script>
+<script src='{% static "main/js/main.js" %}'></script>
+</html>

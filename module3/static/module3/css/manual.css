@@ -1,0 +1,24 @@
+.row{
+    margin-top: 3%;
+}
+
+
+.campos{
+    font-size: xx-large;
+}
+
+textarea {
+    font-size: 1.5em;
+    /*max-height: 1.7em;*/
+    text-align: center;
+}
+
+.btn-primary{
+    background-color: #D6702B;
+    border-color: #D6702B;
+}
+
+.btn-primary:hover{
+    background-color: #D6702B;
+    border-color: #D6702B;
+}

@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+
+    <title>evotebox</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="form-validation.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+
+<div class="container">
+    <div class="py-5 text-center">
+        <h1>Bienvenido al sistema de configuración del proceso de votación</h1>
+
+
+    </div>
+    <span class="text-normal">Por favor, introduzca la información solicitada en el formato adecuado en cada uno de los apartados.</span>
+    <div class="row">
+        <div class="col-md-4 order-md-2 mb-4">
+            <h4 class="d-flex justify-content-between align-items-center mb-3">
+                <span class="text-muted">Requisitos</span>
+                <span class="badge badge-secondary badge-pill">2</span>
+            </h4>
+            <ul class="list-group mb-3">
+                <li class="list-group-item d-flex justify-content-between lh-condensed">
+                    <div>
+                        <h6 class="my-0">Censo</h6>
+                        <small class="text-muted">Censo de votantes cargado</small>
+                    </div>
+                    <span class="text-muted">SI</span>
+                </li>
+
+
+                <li class="list-group-item d-flex justify-content-between">
+                    <span>Proceso completado</span>
+                    <strong>NO</strong>
+                </li>
+
+                <!-- Button trigger modal -->
+
+                <li class="list-group-item d-flex justify-content-between">
+                    <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal"
+                            data-target="#usb">
+
+                        Configuración USB
+                    </button>
+                </li>
+                <li class="list-group-item d-flex justify-content-between">
+                    <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal"
+                            data-target="#modal">
+                        Archivos descargados
+                    </button>
+                </li>
+            </ul>
+
+        </div>
+        <div class="col-md-10 order-md-1">
+
+            <h4 class="mb-3">Información legal y claves de cifrado</h4>
+            <div class="mb-3">
+                <label>
+                    Los siguientes datos serán utilizados para configurar el texto legal con información sobre el
+                    tratamiento de datos
+                    según el Reglamento General de Protección de Datos (REGLAMENTO UE 2016/679).
+                </label>
+                <br/>
+                <br/>
+                <div class="row">
+                    <div class="col">
+                        <label for="nombre_entidad">Nombre entidad organizadora:</label>
+                        <div class="input-group">
+                            <div class="custom-file">
+                                <input type="text" class="input-group-text" id="nombre_entidad"
+                                       placeholder="Introducir nombre de la entidad organizadora" size="50">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <label for="persona_responsable">Persona responsable:</label>
+                        <div class="input-group">
+                            <div class="custom-file">
+                                <input type="text" class="input-group-text" id="persona_responsable"
+                                       placeholder="Introducir nombre de persona responsable" size="50">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br/>
+
+                <label for="direccion">Calle/Avenida/Plaza:</label>
+                <div class="input-group">
+                    <div class="custom-file">
+                        <input type="text" class="input-group-text" id="direccion"
+                               placeholder="Introducir dirección" size="100">
+                    </div>
+                </div>
+                <br/>
+
+                <div class="row">
+                    <div class="col">
+                        <label for="municipio">Municipio</label>
+                        <div class="input-group">
+                            <div class="custom-file">
+                                <input type="text" class="input-group-text" id="municipio"
+                                       placeholder="Introducir municipio" size="30">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <label for="provincia">Provincia:</label>
+                        <div class="input-group">
+                            <div class="custom-file">
+                                <input type="text" class="input-group-text" id="provincia"
+                                       placeholder="Introducir provincia" size="30">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <label for="codpostal">Código postal:</label>
+                        <div class="input-group">
+                            <div class="custom-file">
+                                <input type="text" class="input-group-text" id="codpostal"
+                                       placeholder="Intro. Cod. Postal  " size="12" maxlength="5">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <hr class="mb-4">
+
+            <h4 class="mb-3">Archivo de configuración</h4>
+
+            <div class="mb-3">
+                <label for="censo">Fichero</label>
+                <div class="input-group">
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" accept="text/csv" id="censo">
+                        <label class="custom-file-label" for="censo">Censo en formato CSV</label>
+                    </div>
+                </div>
+                <li class="list-group-item d-flex justify-content-between">
+                    <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal"
+                            data-target="#csvModal">
+
+                        Información de la estructura del CSV
+                    </button>
+                </li>
+                <label for="censo">Seleccionar si se desea el uso de la impresora</label>
+                <select class="selectPrinter">
+                    <option>Si</option>
+                    <option>No</option>
+                </select>
+                 <label for="censo">Seleccionar el modo de la votación, anónimo o no</label>
+                <select class="selectAnon">
+                    <option>Si</option>
+                    <option>No</option>
+                </select>
+                <label for="votacion">Cargar fichero para la configuraciónd de la votación</label>
+                <div class="input-group">
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" accept="text/csv" id="votacion">
+                        <label class="custom-file-label" for="censo"></label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label for="correo">Correo:</label>
+                        <div class="input-group">
+                            <div class="custom-file">
+                                <input type="text" class="input-group-text" id="email"
+                                       placeholder="Introducir correo electrónico" size="30">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <label for="convocante">Convocante:</label>
+                        <div class="input-group">
+                            <div class="custom-file">
+                                <input type="text" class="input-group-text" id="convocante"
+                                       placeholder="Quien convoca el proceso?" size="30">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <label for="proceso">Descripcion del proceso:</label>
+                        <div class="input-group">
+                            <div class="custom-file">
+                                <input type="text" class="input-group-text" id="proceso"
+                                       placeholder="Descripcion del proceso" size="12" maxlength="5">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="mb-4">
+
+            <button class="btn btn-primary btn-lg btn-block" id="generar_usb" type="submit">Generar USB</button>
+        </div>
+    </div>
+
+    <!-- Modal  Configuración USB-->
+    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Configuración del USB</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Se va a descargar el siguiente archivo:
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">1. Archivo configuración.json con los datos necesarios para iniciar el sistema.</li>
+                    </ul>
+
+                    Una vez descargados es necesario copiarlos en el dispositivo USB preparado.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal  Información USB-->
+    <div class="modal fade" id="usb" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Archivos descargados</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Es necesario formatear el USB que se va a utilizar antes de conectarlo al sistema
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">1. Conectar el dispositivo USB en el ordenador.</li>
+                        <li class="list-group-item">2. Boton derecho sobre el dispositivo y selecciona "Formatear".</li>
+                        <li class="list-group-item">2. Cambiar el tipo de formato a FAT32.</li>
+                        <li class="list-group-item">3. Cambiar el nombre del dispositivo a "evotebox".</li>
+                        <li class="list-group-item">4. Click en "Formatear".</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal  Información USB-->
+    <div class="modal fade" id="csvModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Estructura del archivo CSV</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Se necesitan dos archivos CSV, uno contiene los dni del censo y tendrá la siguiente estructura:
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">dni <- no incluido en el csv
+                            <p>01234517B</p>
+                            <p>01234567B</p>
+                            <p>01234567C</>
+                        </li>
+                    </ul>
+
+                    El segundo archivo CSV contiene las propuestas y tendrá la siguiente estructura:
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">titulo,descripcion,presupuesto
+                            <p>Test,descripcion test,10000</p>
+                            <p>Piscina, piscina municipal,8900000</p>
+                            <p>Parque, parque de bolas,300000</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">Àrea Hackers cívics</p>
+    </footer>
+</div>
+
+<script src="js/jquery.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/holder.min.js"></script>
+<script src="js/jquery.csv.min.js"></script>
+<script src="js/papaparse.min.js"></script>
+<script src="js/generate_sqlite.js"></script>
+</body>
+</html>

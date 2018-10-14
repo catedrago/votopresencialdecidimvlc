@@ -1,0 +1,45 @@
+
+.btn-primary:hover, .btn-primary:active{
+    background-color: #D6702B;
+    border-color: #D6702B;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .show > .btn-primary.dropdown-toggle {
+    background-color: #D6702B;
+    border-color: #D6702B;
+}
+
+.btn-primary{
+    background-color: #D6702B;
+    border-color: #D6702B;
+}
+
+.button-no{
+    background-color: #898989;
+    border-color: #898989;
+}
+.button-no:hover{
+    background-color: #898989;
+    border-color: #898989;
+}
+.button-no:active{
+    background-color: #898989;
+    border-color: #898989;
+}
+.button-no:selection{
+    background-color: #898989;
+    border-color: #898989;
+}
+
+.button-cancelar-votacion {
+     background-color: dimgrey;
+    border-color: dimgrey;
+}
+
+.half-rule {
+    margin-left: auto;
+    text-align: left;
+    width: 50%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+ }

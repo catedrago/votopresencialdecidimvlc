@@ -1,0 +1,67 @@
+<!doctype html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
+
+    <title>Signin Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href='{% static "main/css/bootstrap.css" %}' rel="stylesheet">
+    <link href='{% static "module1/css/sweetalert2.min.css" %}' rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href='{% static "main/css/index.css" %}' rel="stylesheet">
+    <script src='{% static "main/js/sweetalert2.min.js" %}'></script>
+    <script src='{% static "module1/js/jquery-3.3.1.min.js" %}'></script>
+    <script src='{% static "module1/js/iniciar.js" %}'></script>
+    <link href='{% static "main/css/main_css.css" %}' rel="stylesheet">
+</head>
+
+<body class="text-center">
+<div class="container">
+    <div class="row align-items-center">
+        <div class="col">
+            <h2>Condiciones de uso del sistema presencial de voto electrónico</h2> <br>
+{#            <p id="default" class="text-justify">#}
+{#                Sus datos personales han sido obtenidos e incorporados a este sistema de voto presencial electrónico por#}
+{#                <span class="font-weight-bold"> {{ convocante }}</span> para <span#}
+{#                    class="font-weight-bold">{{ proces }}.</span></p>#}
+
+            {%  if anonimo %}
+                <p id="default" class="text-justify">El sistema garantiza el carácter secreto del voto, la imposibilidad
+                    de vincular el sentido del voto con la personas que lo emite y que no se conservarán los datos
+                    personales más allá del tiempo que dure el proceso de votación.</p>
+            {% else %}
+
+                <p id="default" class="text-justify"> El sistema ha sido diseñado para incorporar al proceso <span
+                        class="font-weight-bold">{{ proces }}</span> su identificación personal
+                    junto con las opciones votadas, la hora y fecha de votación. El proceso <span
+                        class="font-weight-bold">{{ proces }}</span> considerará el último voto que haya emitido por
+                    cualquiera de los procedimientos habilitados.</p>
+
+            {% endif %}
+
+            <p id="default" class="text-justify">Se puede ejercitar todos los derechos reconocidos en RGPD y LOPD ante
+                cualquiera de los puntos de registro general, así como ante la sede electrónica del
+                ayuntamiento de València (https://sede.valencia.es/).</p>
+
+            <p id="default" class="text-justify">Por otra parte, si considera que sus datos personales no han sido
+                tratados adecuadamente o desea ayudarnos a mejorar la protección del derecho de protección de datos
+                puede hacerlo en <span class="font-weight-bold">{{ correo }}</span></p>
+
+            <br>
+        </div>
+    </div>
+<hr class="half-rule"/>
+    <div class="row align-items-center">
+        <div class="col">
+            <a href="{% url 'module1:index_tarjeta'  %}"><button id="iniciar" type="button" class="btn btn-primary btn-lg" > Aceptar </button></a>
+
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,468 @@
+{% load staticfiles %}
+
+@font-face {
+  font-family: Oxygen;
+  font-style: normal;
+  /*font-weight: 0;*/
+  src: url('fonts/Oxygen-Regular.ttf')  format('truetype');
+}
+
+@font-face {
+  font-family: Rambla;
+  font-style: normal;
+  font-weight: 700;
+  src: url('fonts/Rambla-Regular.ttf') ;
+}
+
+html, body { height: 100%; width: 100%; margin: 0; }
+div { height: 100%; width: 100%;  }
+body, html {
+	margin: 0;
+	padding: 0;
+    overflow: hidden;
+    /*src: url('fonts/Helvetica/Helvetica.ttf');*/
+    /*src: url('fonts/Oxygen-Bold.otf');*/
+    /*src: url('fonts/Oxygen.otf');*/
+    /*src: url('fonts/Oxygen-BoldItalic.otf');*/
+    /*src: url('fonts/Oxygen-Italic.otf');*/
+}
+
+html, body, h2, h3, h4, h5, h6, a {
+	font-family: Oxygen, Rambla;
+}
+
+h1 {
+	font-family: Oxygen, Rambla;
+	color: black;
+
+}
+
+h2 {
+	font-weight: normal;
+}
+
+h2 strong {
+	color: #98bf11; /* verde */
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+p {
+    font-family: Rambla;
+    /*font-size:  14px;*/
+}
+
+
+/*Titulo*/
+
+.title{
+    margin-left: 4.3%;
+    margin-top: 1%;
+
+}
+
+/*<!-- Slider  -->*/
+
+
+.selector{
+    margin: 0% 0 0 0.5%;
+    width: 75%;
+    height: 92%;
+    float: left;
+    position: absolute;
+    padding: 1%;
+
+}
+
+
+
+
+
+
+
+.w3-button{
+    background: orange;
+
+}
+
+.propuestaDiv{
+    width: 90%;
+    height: 95%;
+    float: left;
+    margin: 0 4%;
+    overflow: hidden;
+}
+
+
+
+.codigoPropuesta{
+    font-family: Rambla;
+    width: 80%;
+    height: 6%;
+    /*border-style: solid;*/
+    margin: 2% 0 0 0;
+    display:block;
+    float:left;
+
+}
+#codigoP{
+    font-weight: bold;
+}
+
+#propuesta{
+    margin-top: 8%;
+    margin-left: 0.2%;
+    overflow: scroll;
+
+    text-align: match-parent;
+    overflow: scroll;
+
+    height:65%;
+    width:95%;
+
+
+}
+
+.codigoPropuesta, #codigoP, #propuesta{
+    font-family: Rambla;
+    font-size:  16px;
+}
+
+
+#propuesta p{
+    paddng: 1% 0 1% 0;
+}
+
+#propuesta li{
+
+    padding: 1%;
+}
+
+
+::-webkit-scrollbar {
+    display: block;
+}
+
+#presupuesto{
+    margin-left: 2%;
+    font-family: Oxygen;
+    font-weight: bold ;
+    font-size: 26px;
+    color: #c1620b; /* naranja */
+}
+
+.seleccion{
+    width: 10%;
+    height: 120%;
+    float: left;
+
+    /*border-style: dotted;*/
+
+
+}
+
+.seleccion button{
+    height: 100%;
+    width: 100%;
+    background-size:100% 100%;
+    border-style: none;
+}
+
+.antButton{
+    background-image: url("images/siguiente2.jpg");
+    background-repeat: no-repeat;
+}
+
+.sigButton{
+    background-image: url("images/siguiente.jpg");
+    background-repeat: no-repeat;
+
+}
+.siguiente{
+}
+
+/*Boton anyadir propuesta*/
+.aceptar{
+    margin-top: 47%;
+    position: absolute;
+    width: 100%;
+    height: 8%;
+    float: left;
+    /*border-style: dotted;*/
+    padding: 0 5%;
+
+
+}
+
+.aceptarButton, .enviar {
+    width: 20%;
+    height: 100%;
+}
+.aceptarButton{
+    font-size: 18px;
+    font-weight: 900;
+    /*font-size: medium;*/
+    float: left;
+    margin: 0 13% 0 13%;
+
+}
+
+.enviar {
+    margin: 0% 0% 0% 10%;
+
+    /*background-color: dimgrey;*/
+
+
+}
+
+
+.fechaPropuesta,   .lugar{
+    margin-top: 0.4%;
+    /*font: 200 16px Georgia, Times New Roman, serif;*/
+    font-family: Oxygen;
+}
+
+
+.punto, .puntoizq{
+    width: auto;
+    height: auto;
+    float: left;
+    margin: 0 2% 0 2%;
+    font-size: 45px;
+    font-family: Rambla;
+    color: #dee0e3;
+    line-height: 3%;
+    vertical-align: middle;
+}
+
+.puntoizq{
+    /*margin-right: 2%;*/
+    margin-left: 2%;
+}
+
+/*Propuesta*/
+.tituloPropuesta{
+    margin-left: 0%;
+    color: #c1620b; /* naranja */
+    overflow: auto;
+    width: 90%;
+    font-size: 26px;
+    font-family: Oxygen;
+
+    font-weight: bold;
+
+}
+
+.lineaProp{
+    margin: 2% 1% 2% 0%;
+
+}
+.fechaPropuesta{
+
+
+}
+
+.divFechaPropuesta{
+    color:grey;
+    font-size: 14px;
+    display:block;
+    /*width: 2%;*/
+    float:left;
+    width: 10%;
+    height: 100%;
+    /*border-style: dashed;*/
+}
+
+.lugar{
+    color:grey;
+    display:block;
+    /*margin-left: 4%;*/
+    float:left
+}
+
+.tipoPropuesta{
+    /*margin-left: 5%;*/
+    font-size:14px;
+    color: #a64423;
+    border: 1px solid;
+    border-radius: 5px;
+    background-color: #98bf11;
+    color: white;
+
+    display:block;
+    font-size: small;
+    float:left;
+    width: auto;
+    padding: 0.9% 2.2%;
+}
+
+/*<!-- Lista pare derecha  -->*/
+* {margin: 0; padding: 0;}
+
+.tituloLista{
+    margin-left: 70%
+}
+
+.lista {
+    width: 30%;
+    height: 77%;
+    float: right;
+    margin-top:  -1%;
+    margin-left: 80%;
+    overflow: scroll;
+    /*border-style: solid;*/
+}
+
+.lista h3{
+    color:#9CC56A;
+    position:fixed;
+}
+
+.item{
+    width: 80%;
+    float: left;
+}
+
+.eliminar{
+    background-image: url('images/xButton.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    float:left;
+
+    color:red;
+    border-style: outset;
+    margin-left: 80%;
+    margin-top: -10%;
+    /*padding-top:20%;*/
+    height: 50px;
+    width: 15%;
+    /*margin-top: 15%;*/
+}
+
+
+
+.MisVotos{
+    margin-top: 1%;
+    font-family: Oxygen;
+    font-size: 20px;
+    font-weight: bold;
+    /*float:left;*/
+    height: 7%;
+    width: 15%;
+    /*z-index: 1;*/
+    /*background-color: white;*/
+    margin-left: 71%;
+    color: #98bf11;
+
+
+
+}
+
+
+.lista ul {
+    list-style-type: none;
+    width: 100%;
+    /*margin-top: 10%;*/
+}
+
+
+
+
+.lista  li p {
+}
+
+.lista li {
+    width: 90%;
+    padding: 10px;
+    overflow: auto;
+}
+
+.listaCarrito {
+
+    width: 100%;
+    list-style: disc;
+    overflow: hidden;
+    /*font-size: 2em;*/
+}
+
+
+
+
+/*li:hover {*/
+  /*background: #eee;*/
+  /*cursor: pointer;*/
+/*}*/
+
+
+
+/*Copia CSS custom.scss pasado por Diego*/
+
+
+.item p {
+    color: #333;
+    font-size: 1.2em;
+    font-family: Rambla;
+
+}
+
+button {
+    margin: 0;
+    border-radius: 0.5em;
+	/*border-radius: 4px;*/
+    color:white;
+    background: #D6702B;
+
+    font-family: Rambla;
+    font-weight: bold;
+
+}
+
+
+
+.no-click {
+    pointer-events: none;
+    background-color: grey;
+
+}
+
+/*Lineas*/
+
+
+
+.line{
+    margin-left: 4%;
+    background: grey;
+    height: 0.2%;
+    width:90%;
+}
+
+.line2{
+    position: absolute;
+    margin-left: 70%;
+    /*border-style: ridge;*/
+    /*border-width: thin medium thick 1px;*/
+    /*border-style: solid;*/
+    background: grey;
+    height: 85%;
+    width: 0.1%;
+
+}
+
+
+.btn-primary:hover{
+    background-color: #D6702B;
+    border-color: #D6702B;
+}
+
+.btn-primary{
+    background-color: #D6702B;
+    border-color: #D6702B;
+}
+
+button{
+    font-size: 1.2em;
+}
