@@ -1,2 +1,2 @@
-# evotebox2
-Versión 2.0 de EvoteBox
+# evotebox_decidmVLC
+Adaptación para Decidim VLC de la versión 2.0 de evotebox.
